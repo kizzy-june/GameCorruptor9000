@@ -7,3 +7,5 @@ This mod messes with:
 -Text colors
 -Sky rendering (Stars, sun, moon)
 -Audio engine, makes sounds come from the wrong direction.
+
+I'm bad at coding, expect nothing perfect.
