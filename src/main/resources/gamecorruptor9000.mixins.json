@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "package": "com.kizzyjune.gamecorruptor9000.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BiomeColorMixin",
+    "PerlinNoiseMixin",
+    "MthMixin",
+    "PanoramaRendererMixin",
+    "SplashRendererMixin",
+    "ImprovedNoiseMixin",
+    "SkyRendererMixin",
+    "TextColorMixin",
+    "MainClassMixin",
+    "AudioEngineMixin1"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
