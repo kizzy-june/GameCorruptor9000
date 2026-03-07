@@ -1,6 +1,6 @@
 This mod messes with:
 
-- Math functions (Sine, Cosine, Rotation calculations, Square root calculations, Abs functions, ceil functions)
+- Math functions (Sine, Cosine, Rotation calculations, Square root calculations, Abs functions, ceil functions, positive modulo function)
 
 - Worldgen functions
 

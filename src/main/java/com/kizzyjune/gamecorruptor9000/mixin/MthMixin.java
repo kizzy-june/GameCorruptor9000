@@ -88,6 +88,12 @@ public class MthMixin {
         // Causes Villages to generate incorrectly when fixed at a number.
     }
 
+    @Inject(method = "positiveModulo(II)I", at = @At("TAIL"), cancellable = true)
+    private static void corruptPositiveModulo(CallbackInfoReturnable<Integer> ci) {
+        ci.setReturnValue(ci.getReturnValue() / 2);
+
+        // Causes missing textures.
+    }
     @Inject(method = "ceil(F)I", at = @At("TAIL"), cancellable = true)
     private static void corruptCeil(CallbackInfoReturnable<Integer> cir) {
         if (Config.SPEC.isLoaded() && Config.CORRUPT_CEIL.get()) {
