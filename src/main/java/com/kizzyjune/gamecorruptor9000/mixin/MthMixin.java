@@ -1,5 +1,6 @@
 package com.kizzyjune.gamecorruptor9000.mixin;
 
+import com.kizzyjune.gamecorruptor9000.Config;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import org.spongepowered.asm.mixin.Mixin;
@@ -88,26 +89,22 @@ public class MthMixin {
     }
 
     @Inject(method = "ceil(F)I", at = @At("TAIL"), cancellable = true)
-    private static void corrupt_Ceil(CallbackInfoReturnable<Integer> ci) {
-        ci.setReturnValue(ci.getReturnValue() * 3);
-
-        // Messes with text.
+    private static void corruptCeil(CallbackInfoReturnable<Integer> cir) {
+        if (Config.SPEC.isLoaded() && Config.CORRUPT_CEIL.get()) {
+            int original = cir.getReturnValue();
+            cir.setReturnValue(original * 2);
+            // Messes with text.
+            // Causes logspam. Disabled by default.
+        }
     }
 
-  //  @Inject(method = "positiveModulo(II)I", at = @At("TAIL"), cancellable = true)
-  //  private static void corrupt_positiveModulo(CallbackInfoReturnable<Integer> ci) {
-  //      ci.setReturnValue(ci.getReturnValue() / 2);
-  //
-        // This does something.
-        // It causes missing textures..
-        // This function is unused since imo it corrupted too much.
-  // }
-
-   // @Inject(method = "lerp2(DDDDDD)D", at = @At("TAIL"), cancellable = true)
-  //  private static void corrupt_something(CallbackInfoReturnable<Double> ci) {
-    //    ci.setReturnValue(ci.getReturnValue() * 2);
-
-        // Corrupts some camera effects and worldgen.
-        //
+    @Inject(method = "positiveModulo(II)I", at = @At("TAIL"), cancellable = true)
+    private static void corrupt_positiveModulo(CallbackInfoReturnable<Integer> cir) {
+        if (Config.SPEC.isLoaded() && Config.CORRUPT_CEIL.get()) {
+            int original = cir.getReturnValue();
+            cir.setReturnValue(original / 2);
+            // Causes a lot of missing textures.
+            // Disabled by default-
+        }
     }
- // }
+}
