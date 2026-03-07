@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(PerlinNoise.class)
 public class PerlinNoiseMixin {
     @Inject(method = "wrap", at = @At("TAIL"), cancellable = true)
-    private static void break_perlinNoiseGEN(CallbackInfoReturnable<Double> ci) {
+    private static void corrupt_perlinNoiseGEN(CallbackInfoReturnable<Double> ci) {
         ci.setReturnValue(ci.getReturnValue() * 2);
 
         // Corrupts worldgen.
@@ -18,7 +18,7 @@ public class PerlinNoiseMixin {
     }
 
     @Inject(method = "getValue(DDDDDZ)D", at = @At("RETURN"), cancellable = true)
-    private static void break_perlinNoiseGEN2(CallbackInfoReturnable<Double> ci) {
+    private static void corrupt_perlinNoiseGEN2(CallbackInfoReturnable<Double> ci) {
         ci.setReturnValue(ci.getReturnValue() * 20);
 
         // Corrupts worldgen even more lol

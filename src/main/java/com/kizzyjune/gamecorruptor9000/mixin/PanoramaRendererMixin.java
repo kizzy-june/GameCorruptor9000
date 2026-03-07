@@ -16,7 +16,7 @@ public class PanoramaRendererMixin { ;
             constant = @Constant(floatValue = 10.0F)
     )
     private float changeAngle(float constant) {
-        return 193.5F;
+        return 125.5F;
     }
     @ModifyConstant(
             method = "render",

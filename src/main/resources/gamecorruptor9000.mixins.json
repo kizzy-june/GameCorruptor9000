@@ -9,8 +9,6 @@
     "PanoramaRendererMixin",
     "SplashRendererMixin",
     "ImprovedNoiseMixin",
-    "SkyRendererMixin",
-    "TextColorMixin",
     "MainClassMixin",
     "AudioEngineMixin1"
   ],

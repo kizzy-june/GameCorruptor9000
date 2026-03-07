@@ -1,10 +1,13 @@
 package com.kizzyjune.gamecorruptor9000.mixin;
 
 import com.mojang.blaze3d.audio.Channel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Channel.class)
 public class AudioEngineMixin1 {
