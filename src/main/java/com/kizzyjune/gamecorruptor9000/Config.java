@@ -18,7 +18,7 @@ public class Config {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     public static final ModConfigSpec.ConfigValue<Boolean> CORRUPT_CEIL = BUILDER
-            .comment("If true, the ceil function will be corrupted (disabled by default, causes logspam). Requires you to use F3 + T after enabling, can only be turned off by the reset button. ")
+            .comment("If true, the ceil function will be corrupted (disabled by default, sometimes causes logspam when generating new chunks). Requires you to use F3 + T after enabling, can only be turned off by the reset button. ")
             .define("corruptCeil", false);
 
 
