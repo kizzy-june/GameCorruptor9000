@@ -104,7 +104,7 @@ public class MthMixin {
             int original = cir.getReturnValue();
             cir.setReturnValue(original / 2);
             // Causes a lot of missing textures.
-            // Disabled by default-
+            // Disabled by default.
         }
     }
 }
