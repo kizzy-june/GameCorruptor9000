@@ -95,16 +95,7 @@ public class MthMixin {
             cir.setReturnValue(original * 2);
             // Messes with text.
             // Causes logspam. Disabled by default.
-        }
-    }
 
-    @Inject(method = "positiveModulo(II)I", at = @At("TAIL"), cancellable = true)
-    private static void corrupt_positiveModulo(CallbackInfoReturnable<Integer> cir) {
-        if (Config.SPEC.isLoaded() && Config.CORRUPT_CEIL.get()) {
-            int original = cir.getReturnValue();
-            cir.setReturnValue(original / 2);
-            // Causes a lot of missing textures.
-            // Disabled by default.
         }
     }
 }

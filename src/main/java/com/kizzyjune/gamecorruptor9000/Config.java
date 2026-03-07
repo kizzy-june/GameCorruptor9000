@@ -18,12 +18,8 @@ public class Config {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     public static final ModConfigSpec.ConfigValue<Boolean> CORRUPT_CEIL = BUILDER
-            .comment("If true, the ceil function will be corrupted (disabled by default, causes logspam).")
+            .comment("If true, the ceil function will be corrupted (disabled by default, causes logspam). Requires you to use F3 + T after enabling, can only be turned off by the reset button. ")
             .define("corruptCeil", false);
-
-    public static final ModConfigSpec.ConfigValue<Boolean> CORRUPT_POSITIVE_MODULO = Config.BUILDER
-                .comment("If true, the positive modulo function will be corrupted. No longer allows you to change game mode via GUI, you need to open to LAN and use /gamemode")
-                .define("corruptPositiveModulo", false);
 
 
     public static final ModConfigSpec SPEC = Config.BUILDER.build();
