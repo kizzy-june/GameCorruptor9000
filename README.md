@@ -12,4 +12,6 @@ This mod messes with:
 
 - Audio engine, makes sounds come from the wrong directions.
 
-- Has a config file for some corruptions.
+- Has a config file for ceil corruption.
+
+- Item rendering in inventory slots
