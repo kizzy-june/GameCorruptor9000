@@ -1,3 +1,7 @@
+
+- This mod is for Neoforge 1.21.11
+
+
 This mod messes with:
 
 - Math functions (Sine, Cosine, Rotation calculations, Square root calculations, Abs functions, ceil functions, positive modulo function)
