@@ -8,7 +8,7 @@ This mod messes with:
 
 - Worldgen functions
 
-- Menu panorama and splastext rendering
+- Menu panorama and splashtext rendering
 
 - Grass and foliage colors
 
