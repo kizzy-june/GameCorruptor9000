@@ -4,7 +4,7 @@
 
 This mod messes with:
 
-- Math functions (Sine, Cosine, Rotation calculations, Square root calculations, Abs functions, ceil functions, positive modulo function)
+- Math functions (Sine, Cosine, Rotation calculations, Square root calculations, abs function, ceil function, positive modulo function)
 
 - Worldgen functions
 
@@ -16,6 +16,6 @@ This mod messes with:
 
 - Audio engine, makes sounds come from the wrong directions.
 
-- Has a config file for ceil corruption.
+- Has a config file for turning ceil corruption on and off.
 
 - Item rendering in inventory slots
