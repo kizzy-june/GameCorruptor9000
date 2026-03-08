@@ -16,6 +16,6 @@ This mod messes with:
 
 - Audio engine, makes sounds come from the wrong directions.
 
-- Has a config file for turning ceil corruption on and off.
+- Has a config file for turning ceil corruption on and off. (When on, sometimes causes logspam when generating new chunks).
 
 - Item rendering in inventory slots
