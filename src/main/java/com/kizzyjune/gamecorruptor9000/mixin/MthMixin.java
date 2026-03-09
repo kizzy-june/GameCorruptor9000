@@ -1,6 +1,5 @@
 package com.kizzyjune.gamecorruptor9000.mixin;
 
-import com.kizzyjune.gamecorruptor9000.Config;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,13 +9,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Mth.class)
 public class MthMixin {
     @Inject(method = "sin", at = @At("TAIL"), cancellable = true)
-    private static void corrupt_sineWave(CallbackInfoReturnable<Float> ci) {
-        ci.setReturnValue(ci.getReturnValue() * 5);
+    private static void corrupt_sine(CallbackInfoReturnable<Float> ci) {
+        ci.setReturnValue(ci.getReturnValue() * 5F);
     }
 
     @Inject(method = "cos", at = @At("TAIL"), cancellable = true)
-    private static void corrupt_cosineWave(CallbackInfoReturnable<Float> ci) {
-        ci.setReturnValue(ci.getReturnValue() * 5);
+    private static void corrupt_cosine(CallbackInfoReturnable<Float> ci) {
+        ci.setReturnValue(ci.getReturnValue() * 5F);
     }
 
     // Sine and Cosine mainly affect movement, flowing water and lava texture, worldgen and player animation.
@@ -32,7 +31,7 @@ public class MthMixin {
     // Affects third-person camera and tree generation.
 
     @Inject(method = "abs", at = @At("HEAD"), cancellable = true)
-    private static void corruptAbs(CallbackInfoReturnable<Float> ci) {
+    private static void corrupt_abs(CallbackInfoReturnable<Float> ci) {
         ci.setReturnValue(0F);
 
         // Turns inventory items and some blocks dark.
@@ -71,15 +70,8 @@ public class MthMixin {
 
     // Corrupts Iron Golem and Ravenger animations.
 
-    @Inject(method = "length", at = @At("TAIL"), cancellable = true)
-    private static void corrupt_length(CallbackInfoReturnable<Float> ci) {
-        ci.setReturnValue(ci.getReturnValue() * 64);
-    }
-
-    // Makes round caves appear in the world.
-
     @Inject(method = "length(DDD)D", at = @At("HEAD"), cancellable = true)
-    private static void corrupt_anotherSquareRootCalculation(CallbackInfoReturnable<Double> ci) {
+    private static void corrupt_length2(CallbackInfoReturnable<Double> ci) {
         ci.setReturnValue(1D);
 
         // Causes walking animations to permanently play if set to 1 or higher.
@@ -88,20 +80,8 @@ public class MthMixin {
         // Causes Villages to generate incorrectly when fixed at a number.
     }
 
-    @Inject(method = "positiveModulo(II)I", at = @At("TAIL"), cancellable = true)
-    private static void corruptPositiveModulo(CallbackInfoReturnable<Integer> ci) {
-        ci.setReturnValue(ci.getReturnValue() / 2);
-
-        // Causes missing textures.
-    }
     @Inject(method = "ceil(F)I", at = @At("TAIL"), cancellable = true)
-    private static void corruptCeil(CallbackInfoReturnable<Integer> cir) {
-        if (Config.SPEC.isLoaded() && Config.CORRUPT_CEIL.get()) {
-            int original = cir.getReturnValue();
-            cir.setReturnValue(original * 2);
-            // Messes with text.
-            // Causes logspam. Disabled by default.
-
+    private static void corrupt_ceil(CallbackInfoReturnable<Integer> ci) {
+        ci.setReturnValue(ci.getReturnValue() / 2);
         }
     }
-}

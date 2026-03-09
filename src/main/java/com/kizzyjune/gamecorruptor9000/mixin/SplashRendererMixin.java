@@ -16,14 +16,6 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
             constant = @Constant(floatValue = 69.0F)
     )
     private float changeHeight(float constant) {
-        return RandomSource.create().nextFloat() * RandomSource.create().nextFloat() * 15F;
-    }
-
-    @ModifyConstant(
-            method = "render",
-            constant = @Constant(floatValue = 1000.0F)
-    )
-    private float changeX(float constant) {
-        return 10000.0F;
+        return RandomSource.create().nextFloat() * 65F;
     }
 }

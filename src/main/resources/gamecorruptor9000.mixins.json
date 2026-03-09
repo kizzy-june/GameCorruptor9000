@@ -10,7 +10,8 @@
     "SplashRendererMixin",
     "ImprovedNoiseMixin",
     "MainClassMixin",
-    "AudioEngineMixin1"
+    "AudioEngineMixin1",
+    "TextureAtlasSpriteMixin"
   ],
   "injectors": {
     "defaultRequire": 1
