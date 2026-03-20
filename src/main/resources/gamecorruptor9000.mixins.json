@@ -11,7 +11,8 @@
     "ImprovedNoiseMixin",
     "MainClassMixin",
     "AudioEngineMixin1",
-    "TextureAtlasSpriteMixin"
+    "TextureAtlasSpriteMixin",
+    "MaterialDefinitionMixin"
   ],
   "injectors": {
     "defaultRequire": 1
