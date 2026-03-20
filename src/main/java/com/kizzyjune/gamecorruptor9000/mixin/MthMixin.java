@@ -83,5 +83,8 @@ public class MthMixin {
     @Inject(method = "ceil(F)I", at = @At("TAIL"), cancellable = true)
     private static void corrupt_ceil(CallbackInfoReturnable<Integer> ci) {
         ci.setReturnValue(ci.getReturnValue() / 2);
+
+        // Messes with text rendering and a few other GUI rendering things.
+        
         }
     }
