@@ -4,7 +4,7 @@
 
 This mod messes with:
 
-- Math functions (Sine, Cosine, Rotation calculations, Square root calculations, abs function, ceil function)
+- Math functions (Sine, Cosine, Rotation calculations, Square root calculations, abs function, ceil function, entity texture corruption, texture atlas corruption)
 
 - Worldgen functions
 
