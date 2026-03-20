@@ -4,7 +4,7 @@
 
 This mod messes with:
 
-- Math functions (Sine, Cosine, Rotation calculations, Square root calculations, abs function, ceil function, entity texture corruption, texture atlas corruption)
+- Math functions (Sine, Cosine, Rotation calculations, Square root calculations, abs function, ceil function)
 
 - Worldgen functions
 
@@ -16,7 +16,7 @@ This mod messes with:
 
 - Audio engine, makes sounds come from the wrong directions.
 
-- Textures
+- Textures (entity texture corruption, texture atlas corruption)
 
 - Item rendering in inventory slots
 
