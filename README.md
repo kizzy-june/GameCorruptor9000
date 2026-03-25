@@ -1,5 +1,6 @@
 
 - This mod is for Neoforge 1.21.11
+- 26.1 version coming soon! Many functions have changed and stuff.
 
 
 This mod messes with:
