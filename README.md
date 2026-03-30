@@ -1,6 +1,8 @@
 
 - This mod is for Neoforge 26.1
 
+** You might want to turn off View Bobbing and turn down the distortion effects to 0
+
 
 This mod messes with:
 
