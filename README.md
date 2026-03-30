@@ -1,5 +1,6 @@
 
 - This mod is for Neoforge 1.21.11
+- 26.1 version coming soon! Many functions have changed and stuff.
 
 
 This mod messes with:
@@ -16,7 +17,7 @@ This mod messes with:
 
 - Audio engine, makes sounds come from the wrong directions.
 
-- Textures
+- Textures (entity texture corruption, texture atlas corruption)
 
 - Item rendering in inventory slots
 
