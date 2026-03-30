@@ -20,5 +20,11 @@ This mod messes with:
 
 - Item rendering in inventory slots
 
+- Main menu logo rendering
+
+- Cloud rendering
+
+- Rotation math
+
 Important:
 - Can cause logspam when generating new chunks, rare, but possible.
