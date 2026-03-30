@@ -94,9 +94,4 @@ public class MthMixin {
         // Breaks signs and phantoms.
 
     }
-
-   // @Inject(method = "ceilLong", at = @At("TAIL"), cancellable = true)
-    private static void corruptSomething(CallbackInfoReturnable<Long> ci) {
-        ci.setReturnValue(ci.getReturnValue() * 2);
-    }
 }
