@@ -21,7 +21,9 @@ public class MthMixin {
     // Sine and Cosine mainly affect movement, flowing water and lava texture, worldgen and player animation.
     // Can also affect skybox rendering.
     // Causes server crashes and corrupted worldgen when too fast.
-    // Faster Cosine swapped sky rendering of day and night on older versions of Minecraft.
+    // Messing with Cosine swapped sky rendering of day and night on older versions of Minecraft.
+    // Credits to Destroyer [GD] for finding out it also affects elytra a lot!
+    // Also affects boats.
 
     @Inject(method = "sqrt", at = @At("TAIL"), cancellable = true)
     private static void corrupt_squareRoot(CallbackInfoReturnable<Float> ci) {
@@ -83,5 +85,18 @@ public class MthMixin {
     @Inject(method = "ceil(F)I", at = @At("TAIL"), cancellable = true)
     private static void corrupt_ceil(CallbackInfoReturnable<Integer> ci) {
         ci.setReturnValue(ci.getReturnValue() / 2);
-        }
     }
+
+    @Inject(method = "degreesDifferenceAbs", at = @At("TAIL"), cancellable = true)
+    private static void corrupt_degreesDifferencesAbs(CallbackInfoReturnable<Float> ci) {
+        ci.setReturnValue(ci.getReturnValue() * 2);
+
+        // Breaks signs and phantoms.
+
+    }
+
+   // @Inject(method = "ceilLong", at = @At("TAIL"), cancellable = true)
+    private static void corruptSomething(CallbackInfoReturnable<Long> ci) {
+        ci.setReturnValue(ci.getReturnValue() * 2);
+    }
+}

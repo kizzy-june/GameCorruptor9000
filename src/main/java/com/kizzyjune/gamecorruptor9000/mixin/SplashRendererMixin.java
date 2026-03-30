@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
     // Mixin for messing up the splash text rendering.
 
     @ModifyConstant(
-            method = "render",
+            method = "extractRenderState",
             constant = @Constant(floatValue = 69.0F)
     )
     private float changeHeight(float constant) {

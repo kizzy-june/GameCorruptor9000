@@ -1,28 +1,19 @@
 package com.kizzyjune.gamecorruptor9000.mixin;
 
-import net.minecraft.client.renderer.PanoramaRenderer;
+import net.minecraft.client.renderer.Panorama;
 import net.minecraft.util.RandomSource;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
-@Mixin(PanoramaRenderer.class)
-public class PanoramaRendererMixin { ;
-
-    // Mixin for messing up the panorama rendering.
-
+@Mixin(Panorama.class)
+public class PanoramaRendererMixin {
     @ModifyConstant(
-            method = "render",
-            constant = @Constant(floatValue = 10.0F)
-    )
-    private float changeAngle(float constant) {
-        return 125.5F;
-    }
-    @ModifyConstant(
-            method = "render",
+            method = "extractRenderState",
             constant = @Constant(floatValue = 0.1F)
     )
     private float changeSpeed(float constant) {
-        return RandomSource.create().nextFloat() * RandomSource.create().nextFloat() * 5;
+        return 0.1F + RandomSource.create().nextFloat() * 1.85F;
     }
 }
+

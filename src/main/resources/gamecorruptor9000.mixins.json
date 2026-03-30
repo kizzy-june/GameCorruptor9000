@@ -6,13 +6,18 @@
     "BiomeColorMixin",
     "PerlinNoiseMixin",
     "MthMixin",
-    "PanoramaRendererMixin",
     "SplashRendererMixin",
     "ImprovedNoiseMixin",
-    "MainClassMixin",
-    "AudioEngineMixin1",
+    "MainClientClassMixin",
+    "AudioEngineMixin",
     "TextureAtlasSpriteMixin",
-    "MaterialDefinitionMixin"
+    "MaterialDefinitionMixin",
+    "AxisInterfaceMixin",
+    "PanoramaRendererMixin",
+    "AvatarRendererMixin",
+    "LocalPlayerMixin",
+    "CloudRendererMixin",
+    "LogoRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -7,12 +7,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(Channel.class)
-public class AudioEngineMixin1 {
+public class AudioEngineMixin {
     @ModifyVariable(method = "setSelfPosition(Lnet/minecraft/world/phys/Vec3;)V", at = @At("HEAD"), argsOnly = true)
     private Vec3 editPositions(Vec3 originalVec) {
         return new Vec3(originalVec.x + 3.0, originalVec.y + 3.0, originalVec.z + 3.0);
 
         // Offsets audio from the player.
-
     }
 }

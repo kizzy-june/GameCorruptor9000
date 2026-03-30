@@ -20,7 +20,7 @@ public class TextureAtlasSpriteMixin {
             ordinal = 0
     )
     private static int corrupt_textureAtlas(int originalValue) {
-        int modifiedValue = originalValue * 2 - 350;
+        int modifiedValue = originalValue * 2 - 2;
         return modifiedValue;
     }
 }
