@@ -1,6 +1,7 @@
 
-- This mod is for Neoforge 1.21.11
-- 26.1 version coming soon! Many functions have changed and stuff.
+- This mod is for Neoforge 26.1
+
+- You might want to turn off View Bobbing and turn down the distortion effects to 0
 
 
 This mod messes with:
@@ -20,6 +21,12 @@ This mod messes with:
 - Textures (entity texture corruption, texture atlas corruption)
 
 - Item rendering in inventory slots
+
+- Main menu logo rendering
+
+- Cloud rendering
+
+- Rotation math
 
 Important:
 - Can cause logspam when generating new chunks, rare, but possible.
