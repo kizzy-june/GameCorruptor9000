@@ -12,7 +12,7 @@ This mod messes with:
 
 - Menu panorama and splashtext rendering
 
-- Grass and foliage colors
+- Grass, foliage and water colors
 
 - Text
 
