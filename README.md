@@ -1,7 +1,7 @@
 
 - This mod is for Neoforge 26.1
 
-- You might want to turn off View Bobbing and turn down the distortion effects to 0
+- You might want to turn off View Bobbing
 
 
 This mod messes with:
@@ -12,7 +12,7 @@ This mod messes with:
 
 - Menu panorama and splashtext rendering
 
-- Grass and foliage colors
+- Grass, foliage and water colors
 
 - Text
 
@@ -30,3 +30,12 @@ This mod messes with:
 
 Important:
 - Can cause logspam when generating new chunks, rare, but possible.
+
+
+
+
+
+
+![neo](dc.png)
+
+Only available in Neo Agent 3's forge
