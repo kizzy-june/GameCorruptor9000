@@ -15,7 +15,7 @@ public class BufferBuilderMixin {
     @ModifyVariable(method = "addVertex(FFFIFFIIFFF)V", at = @At("HEAD"), ordinal = 2, argsOnly = true)
     private static float offsetRenderingFromGeometry(float veemo2) {
 
-        // Offsets the world rendering 2 blocks from the actual geometry >:3
+        // Offsets the world rendering 2 blocks from the actual geometry.
 
         return veemo2 + 2;
     }

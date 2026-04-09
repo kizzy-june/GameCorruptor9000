@@ -10,14 +10,14 @@
     "ImprovedNoiseMixin",
     "MainClientClassMixin",
     "AudioEngineMixin",
-    "TextureAtlasSpriteMixin",
     "MaterialDefinitionMixin",
     "AxisInterfaceMixin",
     "PanoramaRendererMixin",
     "AvatarRendererMixin",
     "LocalPlayerMixin",
     "CloudRendererMixin",
-    "LogoRendererMixin"
+    "LogoRendererMixin",
+    "BufferBuilderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
