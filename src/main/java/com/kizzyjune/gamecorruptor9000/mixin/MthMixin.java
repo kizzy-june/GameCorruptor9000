@@ -16,6 +16,9 @@ public class MthMixin {
     @Inject(method = "cos", at = @At("TAIL"), cancellable = true)
     private static void corrupt_cosine(CallbackInfoReturnable<Float> ci) {
         ci.setReturnValue(ci.getReturnValue() * 5F);
+
+        // Kosinus Kokusnuss
+
     }
 
     // Sine and Cosine mainly affect movement, flowing water and lava texture, worldgen and player animation.
