@@ -1,5 +1,5 @@
 
-- This mod is for Neoforge 26.1
+- This mod is for Neoforge 26.1.2
 
 - You might want to turn off View Bobbing
 
@@ -27,6 +27,8 @@ This mod messes with:
 - Cloud rendering
 
 - Rotation math
+
+- Vertex calculations
 
 Important:
 - Can cause logspam when generating new chunks, rare, but possible.
