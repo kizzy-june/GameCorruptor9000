@@ -23,8 +23,8 @@ public class MthMixin {
 
     // Sine and Cosine mainly affect movement, flowing water and lava texture, worldgen and player animation.
     // Can also affect skybox rendering.
-    // Causes server crashes and corrupted worldgen when too fast.
-    // Messing with Cosine swapped sky rendering of day and night on older versions of Minecraft.
+    // Causes server crashes and corrupted worldgen when increased too much.
+    // Messing with Cosine swapped sky rendering of day and night.
     // Credits to Destroyer [GD] for finding out it also affects elytra a lot!
     // Also affects boats.
 
