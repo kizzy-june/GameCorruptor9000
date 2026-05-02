@@ -13,6 +13,6 @@ public class MainClientClassMixin {
         ci.setReturnValue("Please, never play this.");
 
         // Makes the funny window title.
+        // Reference to the SMW ROM hack Super Toad Planet
     }
-
 }

@@ -25,5 +25,4 @@ public class CloudRendererMixin {
     private int modifyCloudHeight(int originalHeight) {
         return originalHeight;
     }
-    }
-
+}

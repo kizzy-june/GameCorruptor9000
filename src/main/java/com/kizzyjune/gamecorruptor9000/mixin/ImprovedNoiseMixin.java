@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ImprovedNoise.class)
 public class ImprovedNoiseMixin {
     @Inject(method = "noise(DDDDD)D", at = @At("RETURN"), cancellable = true)
-    private static void corrupt_improvedNoiseGEN(CallbackInfoReturnable<Double> ci) {
+    private static void corrupt_improvedNoiseGen(CallbackInfoReturnable<Double> ci) {
         ci.setReturnValue(ci.getReturnValue() * 1.3F);
 
         // Also corrupts worldgen.
