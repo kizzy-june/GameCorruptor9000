@@ -30,6 +30,12 @@ This mod messes with:
 
 - Vertex calculations
 
+- Entity model corruption
+
+- RandomSource corruption (nextLong only, causes features to repeat)
+
+- Divisor corruption (affects menu mainly)
+
 Important:
 - Can cause logspam when generating new chunks, rare, but possible.
 
