@@ -20,7 +20,7 @@ public class GameCorruptor9000 {
 
     @SubscribeEvent
     private void commonSetup(FMLCommonSetupEvent event) {
-        LOGGER.warn("GameCorruptor9000 loaded!");
+        LOGGER.warn("GameCorruptor9000 " + DataProvider.modVersion + " loaded!");
         LOGGER.warn("Your game is now corrupted.");
         LOGGER.warn("I don't know why anyone would want this tho lol");
     }

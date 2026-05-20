@@ -17,10 +17,10 @@
     "LocalPlayerMixin",
     "CloudRendererMixin",
     "LogoRendererMixin",
-    "BufferBuilderMixin",
     "DivisorMixin",
     "PoseStackMixin",
-    "RandomSourceMixin"
+    "NoiseChunkMixin",
+    "BufferBuilderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
