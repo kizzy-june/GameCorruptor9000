@@ -14,7 +14,7 @@ public class MaterialDefinitionMixin {
 
     @ModifyVariable(method = "<init>", at = @At("HEAD"), ordinal = 1, argsOnly = true)
     private static int modifyY(int y) {
-        return y * 2;
+        return y / 2;
     }
 
     // Breaks entity textures by multiplying the texture res by 2

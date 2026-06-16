@@ -10,8 +10,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Axis.class)
 interface AxisInterfaceMixin {
     @Inject(method = "rotationDegrees", at = @At("HEAD"), cancellable = true)
-    default void corrupt_rotation(float degrees, CallbackInfoReturnable<Quaternionf> cir) {
+    default void corruptRotation(float degrees, CallbackInfoReturnable<Quaternionf> cir) {
         float degrees2 = degrees + 180.0F;
         cir.setReturnValue(((Axis) (Object) this).rotation(degrees2));
+        // I suck at coding but it works
     }
 }
