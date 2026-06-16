@@ -41,6 +41,7 @@ public class MinecraftMixin {
                 if (Config.hasSineTabCorruptionModeChanged) {
                     LOGGER.warn("Game must be restarted because sine LUT corruption mode changed!");
                 }
+                // Unused
             }
         }
     }

@@ -13,7 +13,10 @@ public class Config {
     public static final ModConfigSpec.EnumValue<FLOAT_CLAMP_CORRUPTION_MODE> FLOAT_CLAMP_CORRUPTION_MODE_CONFIG;
 
     public static boolean hasGameLoaded = false;
+
+
     public static boolean hasSineTabCorruptionModeChanged = false;
+    // Unused
 
     // Cached values
     public static boolean isRenderingCorruptionsEnabled = false;
