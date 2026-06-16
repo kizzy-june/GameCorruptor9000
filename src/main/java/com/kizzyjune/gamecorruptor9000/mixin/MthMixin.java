@@ -11,12 +11,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MthMixin {
     @Inject(method = "sin", at = @At("TAIL"), cancellable = true)
     private static void corruptSine(CallbackInfoReturnable<Float> ci) {
-            ci.setReturnValue(ci.getReturnValue() * 5F);
+            ci.setReturnValue(ci.getReturnValue() * 1.5F);
     }
 
     @Inject(method = "cos", at = @At("TAIL"), cancellable = true)
     private static void corruptCosine(CallbackInfoReturnable<Float> ci) {
-            ci.setReturnValue(ci.getReturnValue() * 5F);
+            ci.setReturnValue(ci.getReturnValue() * 1.5F);
             // Kosinus Kokusnuss
     }
 
