@@ -1,4 +1,4 @@
-package com.kizzyjune.gamecorruptor9000.mixin;
+package com.kizzyjune.gamecorruptor9000.Mixin;
 
 import com.mojang.math.Divisor;
 import org.spongepowered.asm.mixin.Mixin;

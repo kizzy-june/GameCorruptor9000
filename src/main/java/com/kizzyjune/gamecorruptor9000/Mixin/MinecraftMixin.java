@@ -1,4 +1,4 @@
-package com.kizzyjune.gamecorruptor9000.mixin;
+package com.kizzyjune.gamecorruptor9000.Mixin;
 
 import com.kizzyjune.gamecorruptor9000.Config;
 import com.mojang.logging.LogUtils;
@@ -29,20 +29,5 @@ public class MinecraftMixin {
     )
     private void onGameLoadFinished(@Coerce Object cookie, CallbackInfo ci) {
         Config.hasGameLoaded = true;
-    }
-
-    @Inject(
-            method = "stop",
-            at = @At("TAIL")
-    )
-    private void onGameShutDown(CallbackInfo ci) {
-        if (net.minecraft.client.Minecraft.getInstance() != null) {
-            if (Config.hasGameLoaded) {
-                if (Config.hasSineTabCorruptionModeChanged) {
-                    LOGGER.warn("Game must be restarted because sine LUT corruption mode changed!");
-                }
-                // Unused
-            }
-        }
     }
 }

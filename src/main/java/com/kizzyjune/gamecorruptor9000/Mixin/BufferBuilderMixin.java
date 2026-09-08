@@ -1,4 +1,4 @@
-package com.kizzyjune.gamecorruptor9000.mixin;
+package com.kizzyjune.gamecorruptor9000.Mixin;
 
 import com.kizzyjune.gamecorruptor9000.Config;
 import com.mojang.blaze3d.vertex.BufferBuilder;

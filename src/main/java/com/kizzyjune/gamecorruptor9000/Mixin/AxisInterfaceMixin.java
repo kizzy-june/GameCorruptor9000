@@ -1,4 +1,4 @@
-package com.kizzyjune.gamecorruptor9000.mixin;
+package com.kizzyjune.gamecorruptor9000.Mixin;
 
 import com.mojang.math.Axis;
 import org.joml.Quaternionf;
@@ -12,7 +12,7 @@ interface AxisInterfaceMixin {
     @Inject(method = "rotationDegrees", at = @At("HEAD"), cancellable = true)
     default void corruptRotation(float degrees, CallbackInfoReturnable<Quaternionf> cir) {
         float degrees2 = degrees + 180.0F;
-        cir.setReturnValue(((Axis) (Object) this).rotation(degrees2));
+        cir.setReturnValue(((Axis) this).rotation(degrees2));
         // I suck at coding but it works
     }
 }

@@ -1,4 +1,4 @@
-package com.kizzyjune.gamecorruptor9000.mixin;
+package com.kizzyjune.gamecorruptor9000.Mixin;
 
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.util.RandomSource;

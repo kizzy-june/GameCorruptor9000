@@ -1,4 +1,4 @@
-package com.kizzyjune.gamecorruptor9000.mixin;
+package com.kizzyjune.gamecorruptor9000.Mixin;
 
 import com.mojang.blaze3d.audio.Channel;
 import net.minecraft.world.phys.Vec3;

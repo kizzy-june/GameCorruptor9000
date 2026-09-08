@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.kizzyjune.gamecorruptor9000.mixin",
+  "package": "com.kizzyjune.gamecorruptor9000.Mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BiomeColorMixin",
@@ -19,7 +19,8 @@
     "DivisorMixin",
     "PoseStackMixin",
     "NoiseChunkMixin",
-    "BufferBuilderMixin"
+    "BufferBuilderMixin",
+    "ClientBootstrapMixin"
   ],
   "injectors": {
     "defaultRequire": 1

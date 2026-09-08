@@ -11,12 +11,9 @@ public class Config {
     public static final ModConfigSpec.BooleanValue ENABLE_LERP_CORRUPTION;
     public static final ModConfigSpec.BooleanValue ENABLE_BINSEARCH_CORRUPTION;
     public static final ModConfigSpec.EnumValue<FLOAT_CLAMP_CORRUPTION_MODE> FLOAT_CLAMP_CORRUPTION_MODE_CONFIG;
+    public static final ModConfigSpec.BooleanValue SKIP_CLIENT_BOOTSTRAP;
 
     public static boolean hasGameLoaded = false;
-
-
-    public static boolean hasSineTabCorruptionModeChanged = false;
-    // Unused
 
     // Cached values
     public static boolean isRenderingCorruptionsEnabled = false;
@@ -41,14 +38,19 @@ public class Config {
                 .comment("Mode 1 = Divide by 2, Mode 2 = Set to 0, Mode 3 = Set to 1, Mode 4 = Set to -1, Mode 5 = Randomize, Mode 6 = Do not clamp. Might softlock game.")
                 .defineEnum("floatClampCorruptionMode", FLOAT_CLAMP_CORRUPTION_MODE.OFF);
 
+        SKIP_CLIENT_BOOTSTRAP = BUILDER
+                .comment("Skips client bootstrap \n, completely breaks texture and model loading. \n Requires game restart.")
+                .define("skipClientBootstrap",false);
+
+
         SPEC = BUILDER.build();
     }
 
     public static void bakeConfig() {
+        BadWorkaround.writeTrueOrFalse(SKIP_CLIENT_BOOTSTRAP.getAsBoolean());
+
+
         boolean prevIsRenderingCorruptionsEnabled = isRenderingCorruptionsEnabled;
-        boolean prevIsLerpCorruptionEnabled = isLerpCorruptionEnabled;
-        boolean prevIsBinarySearchCorruptionEnabled = isBinarySearchCorruptionEnabled;
-        FLOAT_CLAMP_CORRUPTION_MODE prevFloatClampCorruptionMode = floatClampCorruptionMode;
 
 
         // Update cached values from the config file
@@ -58,10 +60,7 @@ public class Config {
         floatClampCorruptionMode = FLOAT_CLAMP_CORRUPTION_MODE_CONFIG.get();
 
         // Only reload resources if a relevant config option has changed AND the game is loaded
-        if (hasGameLoaded && (isRenderingCorruptionsEnabled != prevIsRenderingCorruptionsEnabled ||
-                isLerpCorruptionEnabled != prevIsLerpCorruptionEnabled ||
-                isBinarySearchCorruptionEnabled != prevIsBinarySearchCorruptionEnabled ||
-                floatClampCorruptionMode != prevFloatClampCorruptionMode)) {
+        if (hasGameLoaded && (isRenderingCorruptionsEnabled != prevIsRenderingCorruptionsEnabled)) {
             Minecraft.getInstance().reloadResourcePacks();
         }
     }
