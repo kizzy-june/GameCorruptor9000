@@ -31,6 +31,12 @@ public class BadWorkaround {
             Files.createFile(skipClientBootstrap);
             return false;
         }
+        if (!Files.readString(skipClientBootstrap).equals("true") || !Files.readString(skipClientBootstrap).equals("false")) {
+            Files.deleteIfExists(skipClientBootstrap);
+            Files.createFile(skipClientBootstrap);
+            Files.writeString(skipClientBootstrap, "false");
+            return false;
+        }
         return Boolean.parseBoolean(Files.readString(skipClientBootstrap));
     }
 }

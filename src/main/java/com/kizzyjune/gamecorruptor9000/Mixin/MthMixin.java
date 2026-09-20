@@ -42,25 +42,12 @@ public class MthMixin {
         // Affects rotation-related functions.
     }
 
-    @Inject(method = "wrapDegrees", at = @At("HEAD"), cancellable = true)
-    private static void corruptWrapDegrees(CallbackInfoReturnable<Float> ci) {
-        ci.setReturnValue(RandomSource.create().nextFloat());
-        // Supposed to smoothly make entities rotate, not really smooth anymore now, huh?
-    }
-
     @Inject(method = "atan2", at = @At("TAIL"), cancellable = true)
     private static void corruptAtan2(CallbackInfoReturnable<Double> ci) {
         ci.setReturnValue(0D);
     }
     // Rotation stuff
     // Probably more?
-
-    @Inject(method = "rotLerp", at = @At("TAIL"), cancellable = true)
-    private static void corruptRotLerp(CallbackInfoReturnable<Float> ci) {
-        ci.setReturnValue(ci.getReturnValue() * 2);
-    }
-
-    // Affects rotation-related functions.
 
     @Inject(method = "triangleWave", at = @At("TAIL"), cancellable = true)
     private static void corruptTriangleWave(CallbackInfoReturnable<Float> ci) {

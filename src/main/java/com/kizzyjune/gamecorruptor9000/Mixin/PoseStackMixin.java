@@ -9,11 +9,10 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 @Mixin(PoseStack.class)
 public class PoseStackMixin {
     @ModifyVariable(method = "scale", at = @At("HEAD"), ordinal = 0, argsOnly = true)
-    private static float stretchModels(float veemo) {
+    private static float stretchModels(float original) {
         if (Config.isRenderingCorruptionsEnabled) {
-            return veemo + 8;
-        } else {
-            return veemo;
+            return original + 8;
         }
+        return original;
     }
 }
