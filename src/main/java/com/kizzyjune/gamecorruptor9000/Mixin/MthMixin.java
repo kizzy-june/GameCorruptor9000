@@ -4,8 +4,12 @@ import com.kizzyjune.gamecorruptor9000.Config;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.concurrent.ThreadLocalRandom;
+
 // Don't show this to my math teacher
 @Mixin(Mth.class)
 public class MthMixin {
@@ -29,11 +33,9 @@ public class MthMixin {
     // Affects third-person camera and tree generation.
     // I was thinking about corrupting the sine table like QuickMäth does, but I leave it like this for now.
 
-    @Inject(method = "abs(F)F", at = @At("HEAD"), cancellable = true)
-    private static void corruptAbs(float Input, CallbackInfoReturnable<Float> ci) {
-        ci.setReturnValue(Input);
-        // Turns inventory items and some blocks dark.
-        // Caused missing models on older versions of Minecraft.
+    @Overwrite
+    public static float abs(float in) {
+        return in;
     }
 
     @Inject(method = "unpackDegrees", at = @At("TAIL"), cancellable = true)
@@ -42,9 +44,9 @@ public class MthMixin {
         // Affects rotation-related functions.
     }
 
-    @Inject(method = "atan2", at = @At("TAIL"), cancellable = true)
-    private static void corruptAtan2(CallbackInfoReturnable<Double> ci) {
-        ci.setReturnValue(0D);
+    @Overwrite
+    public static double atan2(double y, double x) {
+        return ThreadLocalRandom.current().nextDouble();
     }
     // Rotation stuff
     // Probably more?

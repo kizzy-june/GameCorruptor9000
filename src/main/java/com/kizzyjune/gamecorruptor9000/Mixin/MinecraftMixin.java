@@ -13,8 +13,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Minecraft.class)
 public class MinecraftMixin {
-    private static final Logger LOGGER = LogUtils.getLogger();
-
     @Inject(method = "createTitle", at = @At("RETURN"), cancellable = true)
     private static void change_windowTitle(CallbackInfoReturnable<String> ci) {
         ci.setReturnValue("Please, never play this.");
@@ -24,7 +22,7 @@ public class MinecraftMixin {
     }
 
     @Inject(
-            method = "onGameLoadFinished(Lnet/minecraft/client/Minecraft$GameLoadCookie;)V",
+            method = "onGameLoadFinished",
             at = @At("TAIL")
     )
     private void onGameLoadFinished(@Coerce Object cookie, CallbackInfo ci) {

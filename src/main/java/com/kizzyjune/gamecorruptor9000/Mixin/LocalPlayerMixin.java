@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LocalPlayer.class)
 public class LocalPlayerMixin {
-    @Inject(method = "getViewXRot", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "getViewYRot", at = @At("TAIL"), cancellable = true)
     private static void corrupt_XViewRotation(CallbackInfoReturnable<Float> ci) {
         ci.setReturnValue(ci.getReturnValue() * 2);
     }

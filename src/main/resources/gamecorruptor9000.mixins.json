@@ -4,10 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BiomeColorMixin",
-    "PerlinNoiseMixin",
+    "GradientNoiseMixin",
     "MthMixin",
     "SplashRendererMixin",
-    "ImprovedNoiseMixin",
     "MinecraftMixin",
     "AudioEngineMixin",
     "MaterialDefinitionMixin",
@@ -18,7 +17,6 @@
     "LogoRendererMixin",
     "DivisorMixin",
     "PoseStackMixin",
-    "NoiseChunkMixin",
     "BufferBuilderMixin",
     "ClientBootstrapMixin"
   ],
