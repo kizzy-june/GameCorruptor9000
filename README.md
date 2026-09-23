@@ -3,6 +3,7 @@
 
 - You might want to turn off View Bobbing
 
+# Important: I wasn't very experienced with Minecraft's code nor Java when I made this mod, when I have the time I will rewrite many many things, currently this mod honestly sucks
 
 This mod messes with:
 
